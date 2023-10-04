@@ -1,10 +1,14 @@
 import React, { useContext, useRef } from "react";
 import Navbar from "../Shared/Navber/Navar";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 
 const Login = () => {
      const { signIn, resetPassword } = useContext(AuthContext);
+     const location = useLocation()
+     console.log(location);
+     const navigate = useNavigate()
+
 
      const emailRef = useRef(null);
 
@@ -16,9 +20,18 @@ const Login = () => {
           const email = form.get("email");
           const password = form.get("password");
           console.log(email, password);
+          // user sign in using email && password
           signIn(email, password)
                .then((result) => {
                     console.log(result.user);
+
+                    // navigate after login
+                    // user j page theke login page a gache sei page a niye jabe 
+
+                    navigate(location?.state ? location.state : "/")
+
+
+
                })
                .catch((error) => {
                     console.log(error);
