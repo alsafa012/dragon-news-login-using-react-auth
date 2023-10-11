@@ -26,7 +26,7 @@ const Login = () => {
                     console.log(result.user);
 
                     // navigate after login
-                    // user j page theke login page a gache sei page a niye jabe 
+                    // user j page theke login page a gache sei page a niye jabe
 
                     navigate(location?.state ? location.state : "/")
 

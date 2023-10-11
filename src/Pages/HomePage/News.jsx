@@ -9,7 +9,7 @@ const News = ({ singleNews }) => {
 
                     <div className="card-body">
                          <h2 className="card-title">{title}</h2>
-                         <p>
+                         <div>
                               {details.length > 200 ? (
                                    <p>
                                         {details.slice(0, 200)}...
@@ -17,13 +17,13 @@ const News = ({ singleNews }) => {
                                              to={`news/${_id}`}
                                              className="text-[#FF8C47] hover:underline font-bold"
                                         >
-                                             Read more{" "}
-                                        </Link>{" "}
+                                             Read more
+                                        </Link>
                                    </p>
                               ) : (
                                    <p>{details}</p>
                               )}
-                         </p>
+                         </div>
                     </div>
                </div>
           </div>

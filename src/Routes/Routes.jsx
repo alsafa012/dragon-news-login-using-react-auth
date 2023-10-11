@@ -23,6 +23,7 @@ const router = createBrowserRouter([
                               <NewsPage></NewsPage>
                          </PrivateRoute>
                     ),
+                    loader:() => fetch("/news.json"),
                },
                {
                     path: "/register",
